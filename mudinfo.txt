@@ -1,0 +1,2 @@
+/usr/lib/jvm/java-1.16.0-openjdk-amd64
+
