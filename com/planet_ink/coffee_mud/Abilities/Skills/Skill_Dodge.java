@@ -115,8 +115,9 @@ public class Skill_Dodge extends StdSkill
 		&&(CMLib.flags().canBeSeenBy(mob, msg.source()))
 		&&((msg.tool()==null)
 			||((msg.tool() instanceof Weapon)
-			  &&(((Weapon)msg.tool()).weaponClassification()!=Weapon.CLASS_RANGED)
-			  &&(((Weapon)msg.tool()).weaponClassification()!=Weapon.CLASS_THROWN))))
+			  //&&(((Weapon)msg.tool()).weaponClassification()!=Weapon.CLASS_RANGED)
+			  //&&(((Weapon)msg.tool()).weaponClassification()!=Weapon.CLASS_THROWN)
+			  )))
 		{
 			final CMMsg msg2=CMClass.getMsg(mob,msg.source(),this,CMMsg.MSG_QUIETMOVEMENT,L("<S-NAME> dodge(s) the attack by <T-NAME>!"));
 			if((proficiencyCheck(null,mob.charStats().getStat(CharStats.STAT_DEXTERITY)-93+(getXLEVELLevel(mob)),false))
