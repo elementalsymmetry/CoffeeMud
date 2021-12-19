@@ -1,0 +1,337 @@
+#AREA
+ofcol.are~
+Ofcol~
+{ All } Alfa    Ofcol~
+5500 5599
+
+#MOBILES
+#304
+oldstyle citizen~
+the citizen~
+There is a citizen of Ofcol here glaring at you ... stranger!
+~
+She seems like a nice person with no interest in harming you or others.
+She wears a minimum of clothing and has big ... eyes.
+~
+human~
+ACG 0 0 0
+5 0 2d6+60 2d9+100 1d6+1 none
+5 5 5 9
+EFNU 0 0 0
+stand stand female 5
+0 0 medium 0
+#305
+oldstyle worm Shudde-M'ell~
+Shudde-M'ell~
+Shudde-M'ell the Giant worm of G'harne is guarding his treasure.
+~
+Shudde-M'ell is about 15 ft long and is surrounded by an evil stench,
+The worm is the protector of the treasure of G'harne and has been so
+for as long anyone can remember.
+~
+human~
+ABF D -1000 0
+24 0 5d10+500 12d9+100 2d10+6 none
+-6 -6 -6 6
+EFNU 0 0 0
+stand stand male 683
+0 0 medium 0
+#306
+oldstyle luxan shopkeeper~
+Luxan~
+Luxan the Shopkeeper is here, eager to sell you anything.
+~
+Luxan is dressed in a strange jacket.
+He looks like a mean trader from the outskirts of Midgaard.
+His life is seems to be totally occupied with trading.
+He looks very fit and capable of protecting his goods.
+~
+human~
+ABC 0 400 0
+23 0 5d10+450 11d9+100 3d6+6 none
+-6 -6 -6 6
+EFNU 0 0 0
+stand stand male 400
+0 0 medium 0
+#308
+oldstyle keeper innkeeper~
+the Innkeeper~
+An Innkeeper is here waiting for your order.
+~
+The Innkeeper looks skilled in brewing different beers and mixing the
+wierdest drinks known. He also looks very big.
+~
+human~
+AB 0 -100 0
+23 0 5d10+450 11d9+100 3d6+6 none
+-6 -6 -6 6
+EFNU 0 0 0
+stand stand male 5
+0 0 medium 0
+#303
+oldstyle citizen~
+the citizen~
+There is a citizen of Ofcol here glaring at you ... stranger!
+~
+He seems like a nice person with no interest in harming you or others.
+He wears normal, light clothing and has an anonymous face.
+~
+human~
+ACG 0 0 0
+6 0 2d7+71 3d9+100 1d7+1 none
+4 4 4 9
+EFNU 0 0 0
+stand stand male 10
+0 0 medium 0
+#350
+oldstyle dragon pet~
+the pet dragon~
+Ravan's pet dragon is bouncing around here flapping her cute wings.
+~
+Ravan's pet dragon is about 3 ft. tall with small pointy teeth.
+The small wings are eagerly trying to lift her from the ground,
+but so far they haven't succeeded.
+~
+dragon~
+ABHR DH 1000 0
+10 0 2d6+110 10d9+100 1d8+1 none
+2 2 2 6
+FR 0 0 0
+stand stand female 0
+0 0 medium 0
+#0
+
+#OBJECTS
+#304
+wild flowers~
+wild flowers~
+A bunch of pretty wild flowers is here.~
+oldstyle~
+trash K AEO
+0 0 0 0 0
+0 10 0 P
+E
+wild flowers~
+These wild flowers are really pretty.
+Just like the flowers you would wear in your hair.~
+#3020
+dagger~
+a dagger~
+A dagger with a long thin blade is here.~
+steel~
+weapon 0 AN
+dagger 1 4 stab 0
+0 10 157 G
+#3030
+torch~
+a torch~
+A large torch.~
+wood~
+light 0 A
+0 0 50 0 0
+0 30 4 G
+#3000
+barrel beer~
+a barrel of beer~
+A beer barrel has been left here.~
+wood~
+drink 0 A
+300 300 'beer' 0 0
+0 160 75 P
+#3001
+bottle beer~
+a bottle of beer~
+A beer bottle has been left here.~
+glass~
+drink 0 A
+16 16 'beer' 0 0
+0 10 5 P
+#3002
+bottle ale~
+a bottle of ale~
+A dark bottle of ale has been left here.~
+glass~
+drink 0 A
+16 16 'ale' 0 0
+0 20 6 P
+#0
+
+#ROOMS
+#5550
+Village street~
+You stand at the small village street in Ofcol.
+From here you see small houses and only few people.
+North of here the village street continues up to the small
+square where some people are gathered as always.
+~
+0 0 1
+D0
+You look up the village street noticing nothing special at all.
+~
+~
+0 -1 5551
+D2
+The wide road leads south here towards the T-crossing.
+~
+~
+0 -1 314
+S
+#5551
+Village street~
+You are standing on the village street of Ofcol.
+East from here is a small alley and north you enter the village
+square. Towards the south you can leave Ofcol.
+~
+0 0 1
+D0
+The village square is as usual not overcrowded.
+~
+~
+0 -1 5552
+D1
+The small alley looks relative peaceful.
+~
+~
+0 -1 5553
+D2
+You see the village street eventually becoming the wide road.
+~
+~
+0 -1 5550
+S
+#5552
+Village square~
+The village square is a place where inhabitants of Ofcol gather
+to talk, trade and sell items and just have a good time.
+You see a small shop to the west and the local inn to the north.
+If you leave south you go to village street.
+~
+0 0 1
+D0
+You see a local inn called 'The Ofcol Local Inn'. Looks nice.
+~
+~
+0 -1 5556
+D2
+You see the village street of Ofcol.
+~
+~
+0 -1 5551
+D3
+A small shop with the sign 'Luxan's Mixed goods' hanging in front of it.
+~
+~
+0 -1 5555
+S
+#5553
+The small alley~
+You are in a small, quiet alley.  From here you see the village street
+to the west and a small room lies to the south.
+~
+0 0 1
+D1
+You see a big intersection.
+~
+~
+0 0 601
+D2
+It looks like the future site of a training room.
+~
+~
+0 -1 5554
+D3
+You notice nothing but the village street.
+~
+~
+0 -1 5551
+S
+#5554
+The future training room~
+This is the future site of a training room.  The only exit is north
+leading to the small alley.
+~
+0 D 1
+D0
+You are able to see the small alley, really not very interesting.
+~
+~
+0 -1 5553
+S
+#5555
+Luxan's mixed shop~
+You are standing in a small shop, filled with all kinds of goods.
+Here you might be able to find just the thing you're looking for.
+The only exit is east to village square.
+~
+0 D 1
+D1
+The village square is as usual not overcrowded.
+~
+~
+0 -1 5552
+S
+#5556
+The Local Inn~
+You are in the local inn, where the peaceful citizens of Ofcol
+gather to have a drink or 5 if they have dry throats.
+You can't help thinking that Ofcol is a dry city, when you see the
+many people here.
+The only exit is south to the village square.
+~
+0 D 1
+D2
+The village square is as usual not overcrowded.
+~
+~
+0 -1 5552
+S
+#5577
+Ravan's hideout~
+This place is a small, cosy place where no one disturbs you all
+the time. The room has little decoration except for some pictures
+on the wall.
+You notice that there are no exits from this room.
+~
+0 C 0
+E
+friend friends~
+The list include such prominent names as : God, Lottie, Kurgan,
+Ezzard, Mike, Sprocket and Stormbringer.
+~
+E
+foe foes enemies~
+There is only one picture yet... Dim.
+It pictures him hanging from a gallow, north of the town.
+It has the letters R.I.P. inscripted underneath.
+~
+E
+pictures picture decoration~
+These pictures show the friend's and foe's of Ravan.
+They are easy to separate, as most of the foe's have the letters
+R.I.P. inscripted underneath them.
+~
+S
+#0
+
+#RESETS
+M 0  303   5 5556  3	* the citizen
+M 0  303   5 5550  3	* the citizen
+M 0  304   5 5553  3	* the citizen
+M 0  304   5 5552  3	* the citizen
+E 1 3020  99   16	*   a dagger
+M 0  306   1 5555  1	* Luxan
+G 1  304 100     	*   wild flowers
+G 1 3030 100     	*   a torch
+M 0  308   1 5556  1	* the Innkeeper
+G 1 3000 100     	*   a barrel of beer
+G 1 3001 100     	*   a bottle of beer
+M 0  350   1 5577  1	* the pet dragon
+S
+
+#SHOPS
+0
+
+#SPECIALS
+S
+
+#$
