@@ -1130,6 +1130,7 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
 		public String message();
 	}
 
+    public Map<String, Integer> getAbilityUseCounter();
 
 	/** Constant for day of birthday, as from {@link PlayerStats#getBirthday()} */
 	public static final int BIRTHDEX_DAY = 0;

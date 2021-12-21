@@ -711,6 +711,10 @@ public class DefaultPlayerStats implements PlayerStats
 		return str.toString();
 	}
 
+    public Map<String, Integer> getAbilityUseCounter(){
+        return abilityUseCounter;
+    }
+
 	@Override
 	public String getActiveTitle()
 	{
