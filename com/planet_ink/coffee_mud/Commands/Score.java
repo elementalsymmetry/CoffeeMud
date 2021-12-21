@@ -310,7 +310,7 @@ public class Score extends Affect
         while(i.hasMoreElements){
             String key = i.nextElement();
             String val = mob.playerStats().abilityUseCounter.get(key);
-    		msg.append(L(,key+": \n\r", ""+val));
+    		msg.append(L(key+" : ^H@x1^.^N\n\r", ""+val));
         }
 
 		msg.append(getMOBState(mob));
