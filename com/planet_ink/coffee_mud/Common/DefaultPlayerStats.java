@@ -991,7 +991,7 @@ public class DefaultPlayerStats implements PlayerStats
 		abilityUseCounter.clear();
 		for (final XMLTag piece : xml)
 		{
-			if((piece.tag().equals("AC"))&&(piece.parms()!=null))
+			if((piece.tag().equals("ABILITY_USE_COUNT"))&&(piece.parms()!=null))
 			{
 				final String ability=piece.getParmValue( "ABL");
 				final String counterStr=piece.getParmValue( "CNT");
@@ -1641,9 +1641,9 @@ public class DefaultPlayerStats implements PlayerStats
 	{
 		final Integer count=abilityUseCounter.get(ability);
 		if(count != null)
-			abilityUseCounter.put(ability, Integer.valueOf(count.intValue()+1));
+		    abilityUseCounter.put(ability, Integer.valueOf(count.intValue()+1));
 		else
-			abilityUseCounter.put(ability, Integer.valueOf(1));
+		    abilityUseCounter.put(ability, Integer.valueOf(1));
 	}
 
 	@Override
