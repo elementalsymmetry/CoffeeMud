@@ -707,10 +707,11 @@ public class DefaultPlayerStats implements PlayerStats
 			return "";
 		final StringBuilder str=new StringBuilder("");
 		for(final String key : abilityUseCounter.keySet())
-			str.append("<AC ABL=\"").append(key).append("\" CNT=\"").append(abilityUseCounter.get(key)).append("\" />");
+			str.append("<ABILITY_USE_COUNT ABL=\"").append(key).append("\" CNT=\"").append(abilityUseCounter.get(key)).append("\" />");
 		return str.toString();
 	}
 
+	@Override
     public Map<String, Integer> getAbilityUseCounter(){
         return abilityUseCounter;
     }

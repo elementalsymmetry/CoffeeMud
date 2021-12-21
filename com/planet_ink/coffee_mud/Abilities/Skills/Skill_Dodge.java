@@ -126,8 +126,7 @@ public class Skill_Dodge extends StdSkill
 			&&(mob.location().okMessage(mob,msg2)))
 			{
 				doneThisRound=true;
-				final PlayerStats pStats = mob.playerStats();
-                pStats.addAbilityUseCount("Dodge")
+                mob.playerStats().addAbilityUseCount("Dodge")
 				mob.location().send(mob,msg2);
 				helpProficiency(mob, 0);
 				return false;

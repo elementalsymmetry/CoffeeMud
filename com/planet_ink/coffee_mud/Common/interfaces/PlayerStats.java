@@ -857,7 +857,7 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
 	 * Returns the legacy levels for this player, in the given categories
 	 * @see com.planet_ink.coffee_mud.Common.interfaces.PlayerStats#addAbilityUseCount(String)
 	 * @param ability the category to add a legacy level for
-	 * @return the legacy levels for this player this category
+	 * @return the ability use count for this player this ability
 	 */
 	public int getAbilityUseCount(String ability);
 

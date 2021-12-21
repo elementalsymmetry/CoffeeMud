@@ -305,10 +305,10 @@ public class Score extends Affect
 		//if(CMLib.flags().canSeeHidden(mob))
 		//    msg.append(L("Your ^<HELP^>observation score^</HELP^> : ^H@x1^?.\n\r",CMLib.flags().getDetectScore(mob)));
 		msg.append(L("Wimpy is set to ^!@x1^? hit points.\n\r",""+mob.getWimpHitPoint()));
-
+        msg.append("Ability Training::"
         Iterator i = mob.playerStats().getAbilityUseCounter().keySet().iterator();
-        while(i.hasMoreElements){
-            String key = i.nextElement();
+        while(i.hasNext()){
+            String key = i.next();
             String val = mob.playerStats().getAbilityUseCounter().get(key);
     		msg.append(L(key+" : ^H@x1^.^N\n\r",""+val));
         }
