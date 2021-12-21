@@ -981,7 +981,7 @@ public class DefaultPlayerStats implements PlayerStats
 		}
 	}
 
-	private void setAbilityUseCounterXML()(final List<XMLTag> xml)
+	private void setAbilityUseCounterXML(final List<XMLTag> xml)
 	{
 		abilityUseCounter.clear();
 		for (final XMLTag piece : xml)
