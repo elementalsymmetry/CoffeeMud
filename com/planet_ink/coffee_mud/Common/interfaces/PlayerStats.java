@@ -812,6 +812,13 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
 	public void addLegacyLevel(String category);
 
 	/**
+	 * Adds a new legacy level in the given category.
+	 * @see com.planet_ink.coffee_mud.Common.interfaces.PlayerStats#getAbilityUseCount(String)
+	 * @param ability the category to add a legacy level for
+	 */
+	public void addAbilityUseCount(String ability);
+
+	/**
 	 * Checks whether the given ability ID is on the list of those skills
 	 * whose autoInvocation should be suppressed.
 	 * The abilityID is case sensitive, and you can send the fake
@@ -845,6 +852,14 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
 	 * @return the legacy levels for this player this category
 	 */
 	public int getLegacyLevel(String category);
+
+	/**
+	 * Returns the legacy levels for this player, in the given categories
+	 * @see com.planet_ink.coffee_mud.Common.interfaces.PlayerStats#addAbilityUseCount(String)
+	 * @param ability the category to add a legacy level for
+	 * @return the legacy levels for this player this category
+	 */
+	public int getAbilityUseCount(String ability);
 
 	/**
 	 * Returns a mapping definition between awarded abilities and

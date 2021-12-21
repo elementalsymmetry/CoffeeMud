@@ -130,6 +130,8 @@ public class DefaultPlayerStats implements PlayerStats
 
 	protected QuadVector<Integer, Long, String, Long>		levelInfo	= new QuadVector<Integer, Long, String, Long>();
 
+	protected Map<String,Integer>	abilityUseCounter = new STreeMap<String,Integer>();
+
 	public DefaultPlayerStats()
 	{
 		super();
@@ -177,7 +179,8 @@ public class DefaultPlayerStats implements PlayerStats
 			O.titles=new SVector<String>(titles);
 			O.alias=new SHashtable<String,String>(alias);
 			O.legacy=new SHashtable<String,Integer>(legacy);
-			O.xtraValues=(xtraValues==null)?null:(String[])xtraValues.clone();
+			O.abilityUseCounter=new SHashtable<String,Integer>(abilityUseCounter);
+            O.xtraValues=(xtraValues==null)?null:(String[])xtraValues.clone();
 			O.extItems=(ItemCollection)extItems.copyOf();
 			O.playFlags = new SHashSet<PlayerFlag>(playFlags);
 			return O;
@@ -698,6 +701,15 @@ public class DefaultPlayerStats implements PlayerStats
 			str.append("<LEGACY CAT=\"").append(key).append("\" LVL=\"").append(legacy.get(key)).append("\" />");
 		return str.toString();
 	}
+	public String getAbilityUseCounterXML()
+	{
+		if(abilityUseCounter.size()==0)
+			return "";
+		final StringBuilder str=new StringBuilder("");
+		for(final String key : abilityUseCounter.keySet())
+			str.append("<AC ABL=\"").append(key).append("\" CNT=\"").append(abilityUseCounter.get(key)).append("\" />");
+		return str.toString();
+	}
 
 	@Override
 	public String getActiveTitle()
@@ -893,7 +905,8 @@ public class DefaultPlayerStats implements PlayerStats
 			+getTitleXML()
 			+getAliasXML()
 			+getLegacyXML()
-			+"<ACCTEXP>"+accountExpires+"</ACCTEXP>"
+			+getAbilityUseCounterXML()
+            +"<ACCTEXP>"+accountExpires+"</ACCTEXP>"
 			+((birthday!=null)?"<BIRTHDAY>"+CMParms.toListString(birthday)+"</BIRTHDAY>":"")
 			+((deathPoof.length()>0)?"<DEATHPOOF>"+CMLib.xml().parseOutAngleBrackets(deathPoof)+"</DEATHPOOF>":"")
 			+((poofin.length()>0)?"<POOFIN>"+CMLib.xml().parseOutAngleBrackets(poofin)+"</POOFIN>":"")
@@ -964,6 +977,21 @@ public class DefaultPlayerStats implements PlayerStats
 				final String levelStr=piece.getParmValue( "LVL");
 				if((category!=null)&&(levelStr!=null))
 					legacy.put(category, Integer.valueOf(levelStr));
+			}
+		}
+	}
+
+	private void setAbilityUseCounterXML()(final List<XMLTag> xml)
+	{
+		abilityUseCounter.clear();
+		for (final XMLTag piece : xml)
+		{
+			if((piece.tag().equals("AC"))&&(piece.parms()!=null))
+			{
+				final String ability=piece.getParmValue( "ABL");
+				final String counterStr=piece.getParmValue( "CNT");
+				if((ability!=null)&&(counterStr!=null))
+					abilityUseCounter.put(ability, Integer.valueOf(counterStr));
 			}
 		}
 	}
@@ -1076,6 +1104,7 @@ public class DefaultPlayerStats implements PlayerStats
 		setAliasXML(xml);
 		setTitleXML(xml);
 		setLegacyXML(xml);
+		setAbilityUseCounterXML(xml);
 		str=xmlLib.getValFromPieces(xml,"BIRTHDAY");
 		if(debug)
 			Log.debugOut("BIRTHDAY="+str);
@@ -1591,6 +1620,25 @@ public class DefaultPlayerStats implements PlayerStats
 		if(level != null)
 			return level.intValue();
 		return 0;
+	}
+
+	@Override
+	public int getAbilityUseCount(final String ability)
+	{
+		final Integer count=abilityUseCounter.get(ability);
+		if(count != null)
+			return count.intValue();
+		return 0;
+	}
+
+	@Override
+	public void addAbilityUseCount(final String ability)
+	{
+		final Integer count=abilityUseCount.get(ability);
+		if(count != null)
+			abilityUseCounter.put(ability, Integer.valueOf(count.intValue()+1));
+		else
+			abilityUseCounter.put(ability, Integer.valueOf(1));
 	}
 
 	@Override
@@ -2162,6 +2210,7 @@ public class DefaultPlayerStats implements PlayerStats
 		achievementers.clear();
 		alias.clear();
 		legacy.clear();
+		abilityUseCounter.clear();
 		combatSpams.clear();
 		ableMap.clear();
 		experMap.clear();
