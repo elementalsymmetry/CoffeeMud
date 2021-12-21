@@ -306,6 +306,13 @@ public class Score extends Affect
 		//    msg.append(L("Your ^<HELP^>observation score^</HELP^> : ^H@x1^?.\n\r",CMLib.flags().getDetectScore(mob)));
 		msg.append(L("Wimpy is set to ^!@x1^? hit points.\n\r",""+mob.getWimpHitPoint()));
 
+        Iterator i = mob.playerStats().abilityUseCounter.keySet().iterator();
+        while(i.hasMoreElements){
+            String key = i.nextElement();
+            String val = mob.playerStats().abilityUseCounter.get(key);
+    		msg.append(L(,key+": \n\r", ""+val));
+        }
+
 		msg.append(getMOBState(mob));
 		msg.append(getAffects(mob.session(),mob,false,false));
 		return msg;
