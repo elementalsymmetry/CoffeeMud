@@ -1634,7 +1634,7 @@ public class DefaultPlayerStats implements PlayerStats
 	@Override
 	public void addAbilityUseCount(final String ability)
 	{
-		final Integer count=abilityUseCount.get(ability);
+		final Integer count=abilityUseCounter.get(ability);
 		if(count != null)
 			abilityUseCounter.put(ability, Integer.valueOf(count.intValue()+1));
 		else
