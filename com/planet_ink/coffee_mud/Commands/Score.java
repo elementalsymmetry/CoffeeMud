@@ -306,7 +306,8 @@ public class Score extends Affect
 		//    msg.append(L("Your ^<HELP^>observation score^</HELP^> : ^H@x1^?.\n\r",CMLib.flags().getDetectScore(mob)));
 		msg.append(L("Wimpy is set to ^!@x1^? hit points.\n\r",""+mob.getWimpHitPoint()));
         msg.append("Ability Training::");
-        Iterator i = mob.playerStats().getAbilityUseCounter().keySet().iterator();
+        Map<String,Integer> ps = mob.playerStats();
+        Iterator<String> i = ps.getAbilityUseCounter().keySet().iterator();
         while(i.hasNext()){
             String key = i.next();
             Integer val = mob.playerStats().getAbilityUseCounter().get(key);
