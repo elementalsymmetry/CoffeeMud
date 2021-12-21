@@ -309,7 +309,7 @@ public class Score extends Affect
         Iterator i = mob.playerStats().getAbilityUseCounter().keySet().iterator();
         while(i.hasMoreElements){
             String key = i.nextElement();
-            String val = mob.playerStats().abilityUseCounter.get(key);
+            String val = mob.playerStats().getAbilityUseCounter().get(key);
     		msg.append(L(key+" : ^H@x1^.^N\n\r",""+val));
         }
 
