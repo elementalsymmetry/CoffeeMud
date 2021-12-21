@@ -7,7 +7,7 @@ $JAVACPATH com/planet_ink/coffee_mud/Abilities/*.java
 #$JAVACPATH com/planet_ink/coffee_mud/Areas/*.java
 #$JAVACPATH com/planet_ink/coffee_mud/Behaviors/*.java
 #$JAVACPATH com/planet_ink/coffee_mud/CharClasses/*.java
-#$JAVACPATH com/planet_ink/coffee_mud/Commands/*.java
+$JAVACPATH com/planet_ink/coffee_mud/Commands/*.java
 $JAVACPATH com/planet_ink/coffee_mud/Common/*.java
 #$JAVACPATH com/planet_ink/coffee_mud/core/*.java
 #$JAVACPATH com/planet_ink/coffee_mud/core/database/*.java
