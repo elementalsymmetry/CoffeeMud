@@ -701,6 +701,7 @@ public class DefaultPlayerStats implements PlayerStats
 			str.append("<LEGACY CAT=\"").append(key).append("\" LVL=\"").append(legacy.get(key)).append("\" />");
 		return str.toString();
 	}
+
 	public String getAbilityUseCounterXML()
 	{
 		if(abilityUseCounter.size()==0)

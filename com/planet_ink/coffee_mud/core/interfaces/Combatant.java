@@ -24,7 +24,7 @@ import com.planet_ink.coffee_mud.MOBS.interfaces.MOB;
  *
  * @author Bo Zimmerman
  *
- */
+ */ 
 public interface Combatant extends PhysicalAgent
 {
 	/**
